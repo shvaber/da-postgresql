@@ -1,0 +1,15 @@
+<form id="login_form" action="|FORM_ACTION|" method="post" name="login_form">
+<input type="hidden" name="subject" value="|FORM_SUBJECT|" />
+<input type="hidden" name="server" value="|FORM_SERVER|" />
+<input type="hidden" name="loginServer" value="|LOGIN_SERVER|" />
+<input type="hidden" name="loginUsername" value="|LOGIN_USERNAME|" />
+<input type="hidden" name="database" value="|LOGIN_DATABASE|" />
+<input type="hidden" name="loginPassword_|MD5_HASH|" value="|LOGIN_PASSWORD|" />
+<input type="hidden" name="loginSubmit" value="" /></p>
+</form>
+
+<script>
+<!--
+    document.getElementById("login_form").submit();
+//-->
+</script>

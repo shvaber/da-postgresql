@@ -1,0 +1,50 @@
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="px_subtitle" class="float-left"><h4>|PLUGIN_DB_RESTORE|</h4></div>
+            <div id="px_top_navigation" class="float-right">
+                <button id="px_plugin_db_create_link" type="button" class="btn btn-primary text-uppercase sr-only">|PLUGIN_DB_CREATE_NEW|</button>
+                <button id="px_plugin_db_restore_link" type="button" class="btn btn-info text-uppercase sr-only">|PLUGIN_DB_RESTORE|</button>
+                <button id="px_plugin_back_link" type="button" class="btn btn-secondary text-uppercase">|PLUGIN_GO_BACK|</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <form method="POST" style="padding-top: 25px" id="px_plugin_restore_db_form" enctype="multipart/form-data">
+            <div class="form-group row py-2">
+                <label for="px_input_db_select" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_SELECT|</label>
+                <div class="col-sm-8">
+                    <select class="form-control" id="px_input_db_select" required name="database"|DISABLED|>
+                    |PLUGIN_DB_SELECT_OPTIONS|
+                    </select>
+                </div>
+            </div>
+             <div class="form-group row py-2">
+                <label for="px_input_db_file" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_FILE|</label>
+                <div class="col-sm-8">
+                     <input type="file" class="form-control-file" required id="px_input_db_file" name="dump"|DISABLED| />
+                     <input type="hidden" id="px_input_fname" name="fname" value="" |DISABLED| />
+                </div>
+            </div>
+            <div class="form-group row py-2">
+                <label for="px_input_db_user" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_USER|</label>
+                <div class="col-sm-8">
+                    <select class="form-control" id="px_input_db_user" required name="dbuser"|DISABLED|>
+                    |PLUGIN_DB_USERS_OPTIONS|
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row py-2">
+                <label for="px_input_db_password" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_PASSWORD|</label>
+                <div class="col-sm-8" id="px_db_password">
+                    <input type="password" name="dbpass" class="form-control" id="px_input_db_password" required data-toggle="password" maxlength="100" placeholder=""|DISABLED| />
+                </div>
+            </div>
+            <div class="form-group row float-right py-2 pr-3">
+                  <button type="submit" class="btn btn-primary text-uppercase"|DISABLED|>
+                      <div id="px_plugin-submit-spinner"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> |PLUGIN_LOADING_STATUS|</div>
+                      <div id="px_plugin-submit-active" class="sr-only">|PLUGIN_DB_RESTORE|</div>
+                  </button>
+            </div>
+        </form>
+    </div>

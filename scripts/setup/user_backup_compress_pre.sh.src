@@ -1,0 +1,3 @@
+#!/bin/bash
+SCRIPT="/usr/local/directadmin/plugins/postgresql/exec/hooks/user_backup_compress_pre.sh";  # PostgreSQL
+test -x "${SCRIPT}" && "${SCRIPT}" "${username}" "${reseller}" "${file}"; # PostgreSQL

@@ -1,0 +1,50 @@
+#!/usr/local/bin/php -nc/usr/local/directadmin/plugins/postgresql/php.ini
+<?php
+######################################################################################
+#
+#   Postgresql integration for DirectAdmin $ 0.2
+#   ==============================================================================
+#          Last modified: Mon Feb 10 12:44:48 +07 2020
+#   ==============================================================================
+#         Written by Alex Grebenschikov, Poralix, www.poralix.com
+#         Copyright 2022 by Alex Grebenschikov, Poralix, www.poralix.com
+#   ==============================================================================
+#         Distributed under Apache License Version 2.0, January 2004
+#                                          http://www.apache.org/licenses/
+#
+######################################################################################
+
+?>
+<?php
+
+if (!extension_loaded('pgsql'))
+{
+    echo "[ERROR] pgsql module is not loaded...\n";
+    exit(1);
+}
+else
+{
+    echo "[OK] The pgsql module is loaded\n";
+}
+
+
+if (!function_exists('pg_connect'))
+{
+    echo "[ERROR] pg_connect() is not available...\n";
+    exit(1);
+}
+else
+{
+    echo "[OK] pg_connect() is available\n";
+}
+
+$dbconn = pg_connect("host=localhost dbname=|DBNAME| user=|USERNAME| password=|PASSWORD|");
+if ($dbconn)
+{
+    echo "[OK] Connected to PostgreSQL server as |USERNAME| fine\n";
+}
+else
+{
+    echo "[ERROR] Failed to connect to PostgreSQL server as |USERNAME|...\n";
+}
+pg_close($dbconn);

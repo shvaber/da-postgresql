@@ -1,0 +1,10 @@
+--- old/Postgres.php    2022-01-25 15:36:47.819465385 +0700
++++ new/Postgres.php    2022-01-25 17:26:08.560017596 +0700
+@@ -450,7 +450,7 @@
+                if (isset($conf['owned_only']) && $conf['owned_only'] && !$this->isSuperUser()) {
+                        $username = $server_info['username'];
+                        $this->clean($username);
+-                       $clause = " AND pg_has_role('{$username}'::name,pr.rolname,'USAGE')";
++                       $clause = (defined('SSO_USERNAME') && SSO_USERNAME) ? " AND (pr.rolname='".SSO_USERNAME."' OR pr.rolname LIKE '".SSO_USERNAME."_%')" : " AND (pr.rolname='{$username}' OR pr.rolname LIKE '{$username}_%')";
+                }
+                else $clause = '';

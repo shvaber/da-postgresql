@@ -1,0 +1,49 @@
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="px_subtitle" class="float-left"><h4>|PLUGIN_DB_CREATE_NEW|</h4></div>
+            <div id="px_top_navigation" class="float-right">
+                <button id="px_plugin_db_create_link" type="button" class="btn btn-primary text-uppercase sr-only">|PLUGIN_DB_CREATE_NEW|</button>
+                <button id="px_plugin_db_restore_link" type="button" class="btn btn-info text-uppercase sr-only">|PLUGIN_DB_RESTORE|</button>
+                <button id="px_plugin_back_link" type="button" class="btn btn-secondary text-uppercase">|PLUGIN_GO_BACK|</button>
+            </div>
+        </div>
+    </div>
+    <form method="POST" style="padding-top: 25px" id="px_plugin_create_db_form">
+        <div class="form-group row">
+            <label for="px_input_db_name" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_NAME|</label>
+            <div class="col-sm-8">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text">|USERNAME|_</span></div>
+                    <input type="text" name="dbname" class="form-control" id="px_input_db_name" placeholder="" autocomplete="off" required maxlength="50"|DISABLED| />
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="px_input_db_user" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_USER|</label>
+            <div class="col-sm-8">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"><span class="input-group-text">|USERNAME|_</span></div>
+                    <input type="text" name="dbuser" class="form-control" id="px_input_db_user" placeholder="" autocomplete="off" required maxlength="50"|DISABLED| readonly />
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <input type="checkbox" id="px_input_db_same_username" name="dbusersame" value="1"|DISABLED| checked /> |PLUGIN_DB_SAME_USERNAME|
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row sr-only" id="px_input_password_container">
+            <label for="px_input_db_password" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_PASSWORD|</label>
+            <div class="col-sm-8" id="px_db_password">
+                <div id="px_input_db_password_generate_link_container" class="sr-only"><div id="px_input_db_password_generate_link" class="input-group-prepend"><button type="button" class="btn btn-outline-secondary input-group-text"><span class="fas fa-dice"></button></span></div></div>
+                <input type="password" name="dbpass" class="form-control" id="px_input_db_password" required autocomplete="off" data-toggle="password" maxlength="100" placeholder=""|DISABLED| />
+            </div>
+        </div>
+        <div class="form-group row float-right">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary text-uppercase"|DISABLED|>|PLUGIN_DB_CREATE|</button>
+            </div>
+        </div>
+    </form>
+    </div>

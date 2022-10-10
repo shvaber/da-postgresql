@@ -1,0 +1,47 @@
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div id="px_subtitle" class="px-3 py-1 float-left border border-secondary rounded"><h6><span class="badge badge-secondary">&nbsp; |PLUGIN_DB_USAGE| &nbsp;</span> |PLUGIN_DB_COUNT| &nbsp; <span class="badge badge-secondary">&nbsp; |PLUGIN_DB_USAGE_SIZE| &nbsp;</span> |PLUGIN_DB_SIZE|</h6></div>
+            <div id="px_top_navigation" class="float-right">
+                <button id="px_plugin_db_create_link" type="button" class="btn btn-primary text-uppercase" title="|PLUGIN_DB_USAGE| / |PLUGIN_DB_LIMIT|">|PLUGIN_DB_CREATE_NEW|</button>
+                <button id="px_plugin_db_restore_link" type="button" class="btn btn-info text-uppercase">|PLUGIN_DB_RESTORE|</button>
+                <button id="px_plugin_back_link" type="button" class="btn btn-secondary text-uppercase">|PLUGIN_RELOAD|</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 25px;">
+        <div class="col-md-12 text-center">
+            <div id="px-list-db-container">
+                <form method="POST" id="px_plugin_db_actions_form">
+                <table class="table table-striped table-hover" id="px_plugin_db_list_user">
+                    <thead class="thead-dark sr-only" id="px_plugin_db_list_selected">
+                    <tr>
+                        <th scope="col" colspan="5">
+                            <div class="form-check float-left mr-3 mt-1"><input type="checkbox" id="px_plugin_db_select_all" class="form-check-input" checked value="" />&nbsp;<label for="px_plugin_db_select_all" id="px_plugin_db_select_all_label">|PLUGIN_DB_SELECTED|</label></div>
+                            <div>
+                                <button type="button" id="px_plugin_db_vacuum" class="btn btn-outline-light btn-sm mx-1">|PLUGIN_DB_VACUUM|</button>
+                                <button type="button" id="px_plugin_db_reindex" class="btn btn-outline-light btn-sm mx-1">|PLUGIN_DB_REINDEX|</button>
+                                <button type="button" id="px_plugin_db_delete" class="btn btn-outline-light btn-sm mx-1">|PLUGIN_DB_DELETE|</button>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <thead id="px_plugin_db_list_regular">
+                    <tr>
+                        <th scope="col" id="px_plugin_db_select">#</th>
+                        <th scope="col">|PLUGIN_TH_DATABASE|</th>
+                        <th scope="col">|PLUGIN_TH_DBOWNER|</th>
+                        <th scope="col">|PLUGIN_TH_DBSIZE|</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+|PLUGIN_TABLE_LIST|
+                    </tbody>
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+

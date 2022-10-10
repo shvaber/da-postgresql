@@ -1,0 +1,50 @@
+<div id="px_plugin-container" class="container container-fluid">
+<!-- by Poralix.com //-->
+    <link rel="stylesheet" href="|PLUGIN_BASE_URL|/images/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="|PLUGIN_BASE_URL|/images/fontawesome/css/fontawesome.css" />
+    <style type="text/css">
+        px_phppgadmin_link="|PLUGIN_PHPPGADMIN_LINK|";
+|CSS_PLUGIN_CODE|
+    </style>
+    <div class="row" id="plugin-title">
+        <div class="text-center mx-auto">
+            <h2>|PLUGIN_HOME_TITLE|</h2>
+            <div>|PLUGIN_HOME_DESCRIPTION|</div>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center mx-auto">
+            <div id="px-error-container" style="display: none">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">|ERROR_HTML|</div>
+            </div>
+            <div id="px-message-container" style="display: none">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">|MESSAGE_HTML|</div>
+            </div>
+        </div>
+    </div>
+    <div id="px_plugin-main-content" style="padding-top: 10px; padding-bottom: 10px;">
+|MAIN_CONTENT|
+    </div>
+    <div>
+        <div class="|PLUGIN_PHPPGADMIN_CLASS|" id="px-phppgadmin-container">
+            <form method="GET" action="|PLUGIN_PHPPGADMIN_LINK|" target="_blank">
+                <input type="hidden" name="iframe" value="no" />
+                <input type="hidden" name="database" value="|PLUGIN_SELECTED_DATABASE|" />
+                <button type="submit" class="btn btn-secondary" id="px_plugin-phppgadmin-link">|PLUGIN_PHPPGADMIN_CONNECT|</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center mx-auto |PLUGIN_FOOTER_CLASS|">
+            <div class="text-secondary">|PLUGIN_FOOTER_TITLE|</div>
+        </div>
+    </div>
+    <br clear="all">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="|PLUGIN_BASE_URL|/images/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="|PLUGIN_BASE_URL|/images/bootstrap/js/bootstrap-show-password.min.js"></script>
+    <script type="text/javascript">
+|JS_PLUGIN_CODE|
+    </script>
+</div>

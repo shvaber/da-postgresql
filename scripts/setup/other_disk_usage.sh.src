@@ -1,0 +1,3 @@
+#!/bin/bash
+SCRIPT="/usr/local/directadmin/plugins/postgresql/exec/hooks/other_disk_usage.sh";  # PostgreSQL
+test -x "${SCRIPT}" && test -n "${username}" && "${SCRIPT}" "${username}"; # PostgreSQL

@@ -1,0 +1,6 @@
+exec/move_uploaded_file
+exec/test_php.php
+pgpass.conf
+data/sso/*.conf
+scripts/setup.tar.gz
+logs/*

@@ -1,0 +1,90 @@
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="px_subtitle" class="float-left"><h4>|PLUGIN_DB_DETAILS| |PLUGIN_SELECTED_DATABASE|</h4></div>
+            <div id="px_top_navigation" class="float-right">
+                <button id="px_plugin_user_create_link" type="button" class="btn btn-primary text-uppercase">|PLUGIN_USER_CREATE|</button>
+                <button id="px_plugin_user_add_link" type="button" class="btn btn-info text-uppercase">|PLUGIN_USER_ADD|</button>
+                <button id="px_plugin_back_link" type="button" class="btn btn-secondary text-uppercase">|PLUGIN_GO_BACK|</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 25px;">
+        <div class="col-md-12 text-center">
+            <div id="px-list-user-container">
+                <form method="POST" id="px_plugin_user_actions_form">
+                <input type="hidden" name="dbname" value="|PLUGIN_SELECTED_DATABASE|" />
+                <table class="table table-striped table-hover" id="px_plugin_user_list_user">
+                    <thead class="thead-dark sr-only" id="px_plugin_user_list_selected">
+                    <tr>
+                        <th scope="col" colspan="4">
+                            <div class="form-check float-left mr-3 mt-1"><input type="checkbox" id="px_plugin_user_select_all" class="form-check-input" checked value="" />&nbsp;<label for="px_plugin_user_select_all" id="px_plugin_user_select_all_label">|PLUGIN_USER_SELECTED|</label></div>
+                            <div>
+                                <button type="button" id="px_plugin_user_delete" class="btn btn-outline-light btn-sm mx-1">|PLUGIN_USER_DELETE|</button>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <thead id="px_plugin_user_list_regular">
+                    <tr>
+                        <th scope="col" id="px_plugin_users_select">#</th>
+                        <th scope="col">|PLUGIN_TH_USERNAME|</th>
+                        <th scope="col">|PLUGIN_TH_CHANGE_PASSWORD|</th>
+                        <th scope="col">|PLUGIN_TH_MODIFY_PRIVILEGES|</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+|PLUGIN_TABLE_LIST|
+                    </tbody>
+                </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal -->
+<form method="POST" id="px_plugin_database_form">
+    <div class="modal fade" id="px_ModalCenter" tabindex="-1" role="dialog" aria-labelledby="px_ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="px_ModalLongTitle">|PLUGIN_CHANGE_PASSWORD|</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="|PLUGIN_MODAL_CLOSE|"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="dbname" value="|PLUGIN_SELECTED_DATABASE|" />
+                    <input type="hidden" name="mode" value="" />
+                    <input type="hidden" name="dbuser" value="" />
+                    <div class="form-group row sr-only" id="px_input_username_container">
+                        <label for="px_input_db_user" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_USER|</label>
+                        <div class="col-sm-8" id="px_db_user">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend"><span class="input-group-text">|USERNAME|_</span></div>
+                                <input type="text" class="form-control" name="dbuser_new" id="px_input_db_user" placeholder="" autocomplete="off" required maxlength="50"|DISABLED| />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row sr-only" id="px_select_username_container">
+                        <label for="px_select_db_user" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_DB_USER|</label>
+                        <div class="col-sm-8" id="px_db_user">
+                            <select class="form-control" name="dbuser_existing" id="px_select_db_user" required |DISABLED|>
+                            |PLUGIN_SELECT_DB_USER|
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row" id="px_input_password_container">
+                        <label for="px_input_db_password" class="col-sm-4 col-form-label col-form-label-sm">|PLUGIN_USER_PASSWORD|</label>
+                        <div class="col-sm-8" id="px_db_password">
+                            <div id="px_input_db_password_generate_link_container" class="sr-only"><div id="px_input_db_password_generate_link" class="input-group-prepend"><button type="button" class="btn btn-outline-secondary input-group-text"><span class="fas fa-dice"></button></span></div></div>
+                            <input type="password" name="dbpass" class="form-control" id="px_input_db_password" required autocomplete="off" data-toggle="password" maxlength="100" placeholder=""|DISABLED| />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">|PLUGIN_MODAL_CLOSE|</button>
+                    <button type="submit" class="btn btn-primary">|PLUGIN_SAVE_CHANGES|</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
