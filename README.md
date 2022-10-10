@@ -22,3 +22,5 @@
 - **exec/dbrestore.sh** - a script to restore a single PostgreSQL DB
 - **exec/dbsize.sh** - a script to get size of all DBs created by user in DirectAdmin
 - **exec/dbusage.sh** - a script to get count of all DBs created by user in DirectAdmin
+
+# It is REQUIRE to re-save User Package or the user's account and set up how much databases it can handle. Including the user "admin"
