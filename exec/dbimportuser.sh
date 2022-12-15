@@ -76,12 +76,12 @@ unset_psql_credentials()
 
 validate_filename()
 {
-    c=$(echo "${1}" | grep -c '\.tar\.gz$');
-    [ "0" == "${c}" ] && die "Filename ${1} should end on tar.gz. Terminating..." 30;
+    c=$(echo "${1}" | grep -c '\.tar\.gz$\|\.tar\.zst$');
+    [ "0" == "${c}" ] && die "Filename ${1} should end on tar.gz or tar.zst. Terminating..." 30;
     de "Filename validated: ${1} - OK";
 
-    c=$(file -i "${1}" | grep -c ' application/x-gzip;');
-    [ "0" == "${c}" ] && die "Filename ${1} should be of a tar.gz format (mime application/x-gzip) . Terminating..." 31;
+    c=$(file -i "${1}" | grep -c ' application/x-gzip\|x-zstd;');
+    [ "0" == "${c}" ] && die "Filename ${1} should be of a tar.gz format (mime application/x-gzip) or a tar.zst format (mime application/x-zstd). Terminating..." 31;
     de "File mime type validated: ${1} - OK";
 }
 
@@ -101,7 +101,7 @@ detect_backup_type()
     }
     fi;
 
-    c=$(echo "${filename}" | egrep -c '^(admin|user)\.[A-Za-z0-9_-]*\.[A-Za-z0-9_-]*\.tar.gz'); #'
+    c=$(echo "${filename}" | egrep -c '^(admin|user)\.[A-Za-z0-9_-]*\.[A-Za-z0-9_-]*\.(tar.gz|tar.zst)'); #'
     if [ "1" == "${c}" ];
     then
     {
@@ -378,7 +378,14 @@ import_directadmin_data()
     local loc_users_imported;
 
     de "Unpacking DirectAdmin archive ${1} to ${2}";
-    tar -zxf "${1}" -C "${2}" "backup/psql/" --strip-components=1;
+    
+    c=$(echo "${1}" | grep -c '\.tar\.gz$');
+    [ "1" == "${c}" ] && tar -zxf "${1}" -C "${2}" "backup/psql/" --strip-components=1;
+    
+    c=$(echo "${1}" | grep -c '\.tar\.zst$');
+    [ "1" == "${c}" ] && tar --use-compress-program=unzstd -xf "${1}" -C "${2}" "backup/psql/" --strip-components=1;
+
+    #tar -zxf "${1}" -C "${2}" "backup/psql/" --strip-components=1;
     IMPORT_DIR="${2}/psql";
     if [ -d "${IMPORT_DIR}" ];
     then
