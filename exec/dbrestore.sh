@@ -101,6 +101,9 @@ do_process_file()
         "text/plain")
             do_import_plain "${1}";
             ;;
+        "application/octet-stream")
+            do_import_plain "${1}";
+            ;;
         "application/x-tar")
             do_import_tar "${1}";
             ;;
